@@ -1,0 +1,42 @@
+
+    img {
+      width: 300px;
+      height: auto;
+    }
+
+    .title{
+        font-weight: bold;
+        font-size: 35px;
+    }
+
+    .common{
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .header{
+      background-color: black;
+      color: white;
+      height: auto;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    .mainbody{
+      background-color: palegreen;
+      min-height: auto;
+      min-width: auto;
+    }
+
+    .footer{
+      position: fixed;
+      background-color: black;
+      color: white;
+      bottom: 0px;
+      left: 5px;
+      right: 5px;
+      height: 25px;
+      line-height: 25px;
+    }
+
+  

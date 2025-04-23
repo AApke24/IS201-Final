@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Résumé</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="webapp.html">Rock Paper Scissors Game</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-color: #f8f9fa; padding: 1rem 0;">
+            <div class="container px-4 px-lg-5">
+                <div style="margin-left: 20%;">
+                    <h1 class="fw-bold">Rock, Paper, Scissors</h1>
+                    <p class="lead mb-0">Test your skills and celebrate IS 201!</p>
+                </div>
+            </div>
+        </header>
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <hr>
+<h2 class="section-heading">Rock, Paper, Scissors Game</h2>
+<p>Click a button to play against the computer!</p>
+
+<div class="text-center mb-4">
+    <button class="btn btn-primary m-2" onclick="play('rock')">Rock</button>
+    <button class="btn btn-success m-2" onclick="play('paper')">Paper</button>
+    <button class="btn btn-danger m-2" onclick="play('scissors')">Scissors</button>
+</div>
+
+<div id="gameResult" class="text-center fs-5 fw-semibold mb-2"></div>
+<div id="completionMessage" class="text-center text-success fw-bold fs-4"></div>
+<script>
+    function play(playerChoice) {
+        const choices = ['rock', 'paper', 'scissors'];
+        const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+        let result = '';
+        let isWin = false;
+
+        if (playerChoice === computerChoice) {
+            result = "It's a tie!";
+        } else if (
+            (playerChoice === 'rock' && computerChoice === 'scissors') ||
+            (playerChoice === 'paper' && computerChoice === 'rock') ||
+            (playerChoice === 'scissors' && computerChoice === 'paper')
+        ) {
+            result = "You win!";
+            isWin = true;
+        } else {
+            result = "You lose!";
+        }
+
+        document.getElementById('gameResult').innerText = 
+            `You chose ${playerChoice}. Computer chose ${computerChoice}. ${result}`;
+
+        document.getElementById('completionMessage').innerText = 
+            isWin ? "🎉 Congrats, you have completed IS 201! 🎓" : "";
+    }
+</script>
+    </body>
+</html>
